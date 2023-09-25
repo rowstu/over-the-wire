@@ -1,0 +1,6 @@
+ssh bandit5@bandit.labs.overthewire.org -p2220
+
+bandit5@bandit:~/inhere$ find . -type f -size 1033c -exec ls {} \;
+./maybehere07/.file2
+bandit5@bandit:~/inhere$ cat ./maybehere07/.file2
+DXjZPULLxYr17uwoI01bNLQbtFemEgo7

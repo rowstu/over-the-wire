@@ -1,0 +1,7 @@
+ssh bandit4@bandit.labs.overthewire.org -p2220
+
+bandit4@bandit:~/inhere$ find . -type f -exec file {} + | grep ASCII
+./-file07: ASCII text
+bandit4@bandit:~/inhere$ 
+bandit4@bandit:~/inhere$ cat ./-file07
+koReBOKuIDDepwhWk7jZC0RTdopnAYKh

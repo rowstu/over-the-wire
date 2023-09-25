@@ -1,0 +1,24 @@
+ssh bandit6@bandit.labs.overthewire.org -p2220
+
+Password file according to the site is owned by bandit7 group is bandit6 and is
+33 bytes in size
+
+
+bandit6@bandit:~$ find /var -type f -user bandit7 -group bandit6 -size 33c -exec
+ls {} + | grep -v denied
+find: '/var/log': Permission denied
+find: '/var/lib/puppet': Permission denied
+find: '/var/lib/apt/lists/partial': Permission denied
+find: '/var/lib/polkit-1': Permission denied
+find: '/var/spool/rsyslog': Permission denied
+find: '/var/spool/bandit24': Permission denied
+find: '/var/spool/cron/atspool': Permission denied
+find: '/var/spool/cron/atjobs': Permission denied
+find: '/var/spool/cron/crontabs': Permission denied
+find: '/var/crash': Permission denied
+find: '/var/tmp': Permission denied
+find: '/var/cache/apt/archives/partial': Permission denied
+find: '/var/cache/ldconfig': Permission denied
+/var/lib/dpkg/info/bandit7.password
+bandit6@bandit:~$ cat /var/lib/dpkg/info/bandit7.password
+HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
