@@ -43,7 +43,7 @@ bandit26@bandit:~$ ./bandit27-do bandit26
 env: ‘bandit26’: Permission denied
 bandit26@bandit:~$
 bandit26@bandit:~$ cat /etc/bandit_pass/bandit26
-c7GvcKlw9mC7aUQaPx7nwFstuAIBw1o1
+<snip>
 
 bandit26@bandit:~$ ./bandit27-do cat /etc/bandit_pass/bandit27
 <snip>
