@@ -2,5 +2,6 @@ ssh bandit8@bandit.labs.overthewire.org -p2220
 
 password is stored in data.txt is is the only unique line
 
+bandit8@bandit:~$ ls
+data.txt
 bandit8@bandit:~$ cat data.txt | sort -r | uniq -u
-UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR

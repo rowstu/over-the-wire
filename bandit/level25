@@ -4,26 +4,7 @@ Logging in to bandit26 from bandit25 should be fairly easy… The shell for user
 bandit26 is not /bin/bash, but something else. Find out what it is, how it works
 and how to break out of it.
 
-Had to lookup a walkthrough for this one. Not really real world. The shell was a
-script that launched "more" to display a text file. If you make your terminal
-window small enough more obviously waits for you to press a key to move through
-the text file. But you can break out of more by entering v (for visual and then
-enter the following commands:
+bandit25@bandit:~$ ls
+bandit26.sshkey
 
-:set shell=/bin/bash
-:shell
 
-Which opens bash. At which point you see we have finished this challenge:
-
-bandit26@bandit:~$ ls
-README.txt  text.txt
-bandit26@bandit:~$ cat README.txt 
-Congratulations on solving the last level of this game!
-
-At this moment, there are no more levels to play in this game. However, we are
-constantly working
-on new levels and will most likely expand this game with more levels soon.
-Keep an eye out for an announcement on our usual communication channels!
-In the meantime, you could play some of our other wargames.
-
-If you have an idea for an awesome new level, please let us know!

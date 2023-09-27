@@ -1,4 +1,6 @@
 ssh bandit10@bandit.labs.overthewire.org -p2220
 
+The password for the next level is stored in the file data.txt, which contains base64 encoded data
+
 bandit10@bandit:~$ cat data.txt | base64 -d
-The password is IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+The password is 

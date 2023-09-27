@@ -1,4 +1,5 @@
 ssh bandit2@bandit.labs.overthewire.org -p2220
 
 bandit2@bandit:~$ cat spaces\ in\ this\ filename 
-UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
+
+

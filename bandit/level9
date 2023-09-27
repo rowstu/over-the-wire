@@ -1,11 +1,9 @@
 ssh bandit9@bandit.labs.overthewire.org -p2220
 
-data.txt is binary file with few human readable strings. Guide says the password
-follows an equals sign. So:
-bandit9@bandit:~$ strings data.txt 
+The password for the next level is stored in the file data.txt in one of the few human-readable strings, preceded by several ‘=’ characters.
 
-<snipped output>
-========== theP`
-    ========== password
-    ========== truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
-<snipped output>
+bandit9@bandit:~$ strings data.txt | grep ==
+4========== the#
+========== password
+========== is
+========== <snip>

@@ -4,87 +4,17 @@ The password for the next level can be retrieved by submitting the password of t
 
 Helpful note: Getting “HEARTBEATING” and “Read R BLOCK”? Use -ign_eof and read the “CONNECTED COMMANDS” section in the manpage. Next to ‘R’ and ‘Q’, the ‘B’ command also works in this version of that command…
 
-
-echo -n BfMYroe26WYalil77FoDi9qh59eK5xNr | openssl s_client -connect localhost:30001
-CONNECTED(00000003)
-depth=0 CN = bandit
-verify error:num=18:self signed certificate
+bandit15@bandit:~$ echo <snip> | openssl s_client -connect localhost:30001 -ign_eof -quiet
+Can't use SSL_get_servername
+depth=0 CN = localhost
+verify error:num=18:self-signed certificate
 verify return:1
-depth=0 CN = bandit
+depth=0 CN = localhost
+verify error:num=10:certificate has expired
+notAfter=Sep 26 18:07:58 2023 GMT
 verify return:1
----
-Certificate chain
- 0 s:/CN=bandit
-   i:/CN=bandit
----
-Server certificate
------BEGIN CERTIFICATE-----
-MIICsjCCAZqgAwIBAgIJAKZI1xYeoXFuMA0GCSqGSIb3DQEBCwUAMBExDzANBgNV
-BAMMBmJhbmRpdDAeFw0xNzEyMjgxMzIzNDBaFw0yNzEyMjYxMzIzNDBaMBExDzAN
-BgNVBAMMBmJhbmRpdDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAOcX
-ruVcnQUBeHJeNpSYayQExCJmcHzSCktnOnF/H4efWzxvLRWt5z4gYaKvTC9ixLrb
-K7a255GEaUbP/NVFpB/sn56uJc1ijz8u0hWQ3DwVe5ZrHUkNzAuvC2OeQgh2HanV
-5LwB1nmRZn90PG1puKxktMjXsGY7f9Yvx1/yVnZqu2Ev2uDA0RXij/T+hEqgDMI7
-y4ZFmuYD8z4b2kAUwj7RHh9LUKXKQlO+Pn8hchdR/4IK+Xc4+GFOin0XdQdUJaBD
-8quOUma424ejF5aB6QCSE82MmHlLBO2tzC9yKv8L8w+fUeQFECH1WfPC56GcAq3U
-IvgdjGrU/7EKN5XkONcCAwEAAaMNMAswCQYDVR0TBAIwADANBgkqhkiG9w0BAQsF
-AAOCAQEAnrOty7WAOpDGhuu0V8FqPoKNwFrqGuQCTeqhQ9LP0bFNhuH34pZ0JFsH
-L+Y/q4Um7+66mNJUFpMDykm51xLY2Y4oDNCzugy+fm5Q0EWKRwrq+hIM+5hs0RdC
-nARP+719ddmUiXF7r7IVP2gK+xqpa8+YcYnLuoXEtpKkrrQCCUiqabltU5yRMR77
-3wqB54txrB4IhwnXqpO23kTuRNrkG+JqDUkaVpvct+FAdT3PODMONP/oHII3SH9i
-ar/rI9k+4hjlg4NqOoduxX9M+iLJ0Zgj6HAg3EQVn4NHsgmuTgmknbhqTU3o4IwB
-XFnxdxVy0ImGYtvmnZDQCGivDok6jA==
------END CERTIFICATE-----
-subject=/CN=bandit
-issuer=/CN=bandit
----
-No client certificate CA names sent
----
-SSL handshake has read 1015 bytes and written 631 bytes
----
-New, TLSv1/SSLv3, Cipher is AES128-SHA
-Server public key is 2048 bit
-Secure Renegotiation IS supported
-Compression: NONE
-Expansion: NONE
-No ALPN negotiated
-SSL-Session:
-    Protocol  : TLSv1
-    Cipher    : AES128-SHA
-    Session-ID: D3BD11FE145757987DCD08EE7FA41B642B8A75332A6C3B9E9D42A35AE8A0F722
-    Session-ID-ctx: 
-    Master-Key: 1B3B55A54529ECA641148F0D175E3A49D2DFA039DF7DBEE308A017ED956AD63CF8D02B5E506B35A031AAD82469DF0E36
-    Key-Arg   : None
-    PSK identity: None
-    PSK identity hint: None
-    SRP username: None
-    TLS session ticket lifetime hint: 7200 (seconds)
-    TLS session ticket:
-    0000 - 29 a6 28 17 9b 5c 28 7b-85 c9 28 dc 8e 75 2f 22   ).(..\({..(..u/"
-    0010 - 7d 4a cc 24 d2 43 41 fc-54 50 e7 54 f5 0a 63 3e   }J.$.CA.TP.T..c>
-    0020 - d9 04 c2 ea c0 ca 17 41-62 45 7c 81 23 a6 6e 9b   .......AbE|.#.n.
-    0030 - 96 0d 73 de 65 12 bc c4-4f 93 57 03 b6 fb de c6   ..s.e...O.W.....
-    0040 - fd 72 30 08 ac 9a 2f 37-c1 8d d4 dc b7 e8 b1 d9   .r0.../7........
-    0050 - bb cf 59 10 56 63 f2 7f-3c df ac 7e dd 5a ab 91   ..Y.Vc..<..~.Z..
-    0060 - 6c 7f 4a 67 e8 20 5d d1-9e bf 97 4e eb d6 d9 d2   l.Jg. ]....N....
-    0070 - ad 2d c8 79 06 f3 28 31-3f bb 57 22 74 28 b0 4b   .-.y..(1?.W"t(.K
-    0080 - eb b5 6d bb 08 e3 36 1e-71 5a fe 75 7d 51 f6 4e   ..m...6.qZ.u}Q.N
-    0090 - ce 33 df 52 d6 f7 6a 6d-e3 09 4b 83 63 af ed bf   .3.R..jm..K.c...
-
-    Start Time: 1517579292
-    Timeout   : 300 (sec)
-    Verify return code: 18 (self signed certificate)
----
-HEARTBEATING
-DONE
-
-### That didn't work - so tried this:
-bandit15@bandit:~$ openssl s_client -connect localhost:30001 -ign_eof -reconnect -quiet
-depth=0 CN = bandit
-verify error:num=18:self signed certificate
+depth=0 CN = localhost
+notAfter=Sep 26 18:07:58 2023 GMT
 verify return:1
-depth=0 CN = bandit
-verify return:1
-BfMYroe26WYalil77FoDi9qh59eK5xNr
 Correct!
-cluFn7wTiGryunymYOu4RcffSxQluehd
+<snip>

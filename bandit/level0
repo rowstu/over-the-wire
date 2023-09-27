@@ -2,4 +2,3 @@ ssh bandit0@bandit.labs.overthewire.org -p2220
 #password is bandit0
 
 bandit0@bandit:~$ cat readme 
-boJ9jbbUNNfktd78OOpsqOltutMc3MY1
