@@ -1,0 +1,22 @@
+ssh bandit32@bandit.labs.overthewire.org -p2220
+
+After all this git stuff its time for another escape. Good luck!
+
+
+WELCOME TO THE UPPERCASE SHELL
+>> ls
+sh: 1: LS: Permission denied
+>> pwd
+sh: 1: PWD: Permission denied
+>> whoami
+sh: 1: WHOAMI: Permission denied
+>> echo $0
+sh: 1: ECHO: Permission denied
+>> $0
+$ echo $0
+sh
+$ /bin/bash
+bandit33@bandit:~$ whoami
+bandit33
+bandit33@bandit:~$ cat /etc/bandit_pass/bandit33
+<snip>
